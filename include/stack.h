@@ -10,8 +10,8 @@ protected :
 	telo *pMem;			// память
 	int quElem;			// количество элементов
 public:
-	TBitField(int len);
-	~TBitField();
+	Stack(int len);
+	~Stack();
 
 	int GetLen();		// получение длины стэка
 	int freeEl();		// получение кол-во свободного места
