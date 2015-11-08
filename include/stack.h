@@ -6,19 +6,18 @@ typedef unsigned int telo;
 class Stack
 {
 protected :
-	int StackLen;
-	telo *pMem;
-	int quElem;
-	int free;
+	int StackLen;		//лина
+	telo *pMem;			// память
+	int quElem;			// количество элементов
 public:
 	TBitField(int len);
 	~TBitField();
 
-	int GetLen();
-	int free();
-	int full();
+	int GetLen();		// получение длины стэка
+	int freeEl();		// получение кол-во свободного места
+	bool full();		// получение рещультата стэк предельно занят или нет
 
-	void SetElem(const int n);
-	int  GetElem() const;
-	int  GetClrElem() const;
+	void SetElem(const int n);  // добавить элемент в конец стэка
+	int  GetElem() const;		//взять значение из стека ,сохранив его
+	int  GetClrElem() const;    //взять значение из стека и удалить его
 };
