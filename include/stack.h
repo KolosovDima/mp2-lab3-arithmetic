@@ -3,23 +3,22 @@
 
 typedef unsigned int telo;
 
-class stack
+class Stack
 {
 protected :
 	int StackLen;
 	telo *pMem;
 	int quElem;
 	int free;
-private :
-	void SetMem(telo &pMem, int StackLen );
 public:
 	TBitField(int len);
 	~TBitField();
 
+	int GetLen();
 	int free();
 	int full();
 
 	void SetElem(const int n);
-	int  GetBit(const int n) const;
-	int  GetClrBit(const int n) const;
+	int  GetElem() const;
+	int  GetClrElem() const;
 };
