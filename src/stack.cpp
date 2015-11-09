@@ -27,7 +27,7 @@ int Stack::freeEl() const
 }
 bool Stack::full() const
 {
-	bool ToF=true;
+	bool ToF=false;
 		if (StackLen==quElem)
 			ToF=true;
 	return ToF;
@@ -36,8 +36,8 @@ void Stack::SetElem(const int n)
 {
 	if (true!=(*this).full())
 	{
-	pMem[quElem]=n;
-	quElem+=1;
+	(*this).pMem[quElem]=n;
+	quElem=quElem+1;
 	}
 	else 
 		throw "Full";
@@ -46,7 +46,7 @@ void Stack::SetElem(const int n)
 int Stack::GetElem() const
 {
 	if ((*this).GetLen()!=(*this).freeEl())
-		return pMem[quElem-1];
+		return (*this).pMem[quElem-1];
 	else
 		throw "Negative_lenght";
 
@@ -57,8 +57,8 @@ int Stack::GetClrElem()
 	{
 		int el;
 		quElem=quElem-1;
-		el=pMem[quElem];
-		pMem[quElem]=0;
+		el=(*this).pMem[quElem];
+		(*this).pMem[quElem]=0;
 		return el;
 	}
 	else

@@ -63,12 +63,13 @@ TEST(Stack, can_get_and_clean_Elem)
 	int a;
 	Stack st(3);
 
+	st.SetElem(2);
 	st.SetElem(3);
 	
 	a=st.GetClrElem();
 
 	EXPECT_EQ(3, a);
-	EXPECT_EQ(0, st.GetElem());
+	EXPECT_EQ(2, st.GetElem());
 }
 TEST(Stack, can_get_free_cell)
 {
