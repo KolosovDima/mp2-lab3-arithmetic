@@ -1,5 +1,7 @@
-#ifndef __STACK_H__
-#define __STACK_H__
+#ifndef __TSTACK_H__
+#define __TSTACK_H__
+
+#include <iostream>
 
 typedef unsigned int telo;
 
@@ -7,17 +9,18 @@ class Stack
 {
 protected :
 	int StackLen;		//лина
-	telo *pMem;			// память
+	int *pMem;			// память
 	int quElem;			// количество элементов
 public:
 	Stack(int len);
 	~Stack();
 
-	int GetLen();		// получение длины стэка
-	int freeEl();		// получение кол-во свободного места
-	bool full();		// получение рещультата стэк предельно занят или нет
+	int GetLen()const;		// получение длины стэка
+	int freeEl()const;		// получение кол-во свободного места
+	bool full()const;		// получение рещультата стэк предельно занят или нет
 
 	void SetElem(const int n);  // добавить элемент в конец стэка
 	int  GetElem() const;		//взять значение из стека ,сохранив его
-	int  GetClrElem() const;    //взять значение из стека и удалить его
+	int  GetClrElem() ;    //взять значение из стека и удалить его
 };
+#endif
