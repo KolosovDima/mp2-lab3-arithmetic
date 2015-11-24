@@ -78,12 +78,31 @@ bool corOper_no_min((string s))
 		cout << 0 << "	Нехватка аргументов" << endl;
 			ToF=false;
 
-	for (int i=0;i<m.Getlen()-1;i++)
-		if ((m[i].GetTyp()==1)&&(if (m[i+1].GetTyp()==1)&&(m[i].GetE()!="-"))
-			cout << i << " Две операции подрят " << endl;
-			ToF=false;
-	/*for (int i=1;i<m.Getlen()-1;i++)
-		if ((m[i].GetTyp()==4)&&(if (m[i+1].GetTyp()!=4)&&(m[i-1].GetTyp()!=4)&&(m[i].GetE()!="-"))*/ //надо придумать со скобками и точкой(обход)
+	for (int i=1;i<m.Getlen()-1;i++)
+		{
+			if (m[i].GetE()==1)
+				if(m[i-1].GetTyp()==4)&&(m[i+1].GetTyp()==3)
+					if (((m[i-2].GetTyp()==1)||(if (m[i+2].GetTyp()==1))&&(m[i].GetE()!="-"))) 
+					{
+						cout << i << " Две операции подрят " << endl;
+								ToF=false;
+					}
+
+				else if (m[i+1].GetTyp()==3)
+					if (((m[i-1].GetTyp()==1)||(if (m[i+2].GetTyp()==1))&&(m[i].GetE()!="-"))) 
+					{
+						cout << i << " Две операции подрят " << endl;
+								ToF=false;
+					}
+
+
+				else (m[i-1].GetTyp()==4)
+					if (((m[i-2].GetTyp()==1)||(if (m[i+1].GetTyp()==1))&&(m[i].GetE()!="-"))) 
+					{
+						cout << i << " Две операции подрят " << endl;
+								ToF=false;
+					}
+		} 
 
 	return ToF;
 
@@ -93,7 +112,7 @@ bool corCommas(string s)
 {
 	bool ToF=true;
 	for (int i=1;i<m.Getlen()-1;i++)
-		if ((m[i].GetTyp()==4)&&((if (m[i-1].GetTyp()==1)||(m[i+1].GetTyp()=3) ||(m[i+1].GetTyp()==5))
+		if ((m[i].GetTyp()==4)&&((if (m[i-1].GetTyp()==1)||(m[i+1].GetTyp()=3)||(m[i+1].GetTyp()==5)))
 		{
 			cout << i << " дробное число не коректо " << endl;
 			ToF=false;

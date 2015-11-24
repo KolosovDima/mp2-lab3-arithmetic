@@ -27,10 +27,11 @@ class mas
 private:
 	Elem *yr;
 	int len;
+	bool Oper(Elem* m); 
+	bool corOper_no_min((Elem* m));
+	bool provbracket(Elem *m)
 public:
 	int Getlen()const {return len};
-	void provbracket(Elem *m)
+	bool corkStr(Elem* m)
 
 }
-bool Oper(char s); 
-bool corOper_no_min((char s));
