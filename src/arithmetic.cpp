@@ -148,6 +148,7 @@ bool corCommas(string s)
 {
 	string s2=".,";
 	bool ToF=true;
+<<<<<<< HEAD
 	if ((s[0]==s2[0])||(s[0]==s2[1]))
 	{
 		cout << 0 << " Нехватка аргументов" << endl;
@@ -160,6 +161,7 @@ bool corCommas(string s)
 	}
 	for (int i=1;i<(s.length()-1);i++)
 		if (((s[i]==s2[0])||(s[i]==s2[1]))&&((FillType(s[i-1])==1)||(FillType(s[i+1])==3) ||(FillType(s[i+1])==5)))
+
 		{
 			cout << "место " << i << " дробное число не коректо " << endl;
 			ToF=false;
