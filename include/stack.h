@@ -89,10 +89,11 @@ T Stack<T>::GetClrElem()
 		T el;
 		quElem=quElem-1;
 		el=(*this).pMem[quElem];
-		(*this).pMem[quElem]=0;
+		(*this).pMem[quElem]=T();
 		return el;
 	}
 	else
 		throw "Negative_lenght";
+
 }
 #endif

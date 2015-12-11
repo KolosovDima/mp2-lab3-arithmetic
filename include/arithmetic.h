@@ -10,27 +10,27 @@
 using namespace std;
 class Elem
 {
-private:
-	string *s;
+	public:
+	string s;
 	int typ;
-	int index;
-public:
+	bool un;
 	Elem();
-	Elem(int typ,string *s1);
+	Elem(int typ1,string s1, bool un2);
 	~Elem();
-	string GetE(){return s};
-	int GetTyp()const {return typ};
-	void FillType();
-}
-class mas
-{
-private:
-	Elem *yr;
-	int len;
-public:
-	int Getlen()const {return len};
-	void provbracket(Elem *m)
-
-}
+	int GetTyp()const {return typ;};
+	void operator=(const Elem m2);
+};
+int FillType(char s);
+bool corBracket(Elem *m,int k);
+bool corMins(Elem *m,int k);
 bool Oper(char s); 
-bool corOper_no_min((char s));
+bool corCommas(string s);
+bool corOper_no_mins(string s);
+void ConInPostfix(Elem *m1,Elem *m2,int &ln);
+void UnaryMinus(Elem *m1,int ln);
+int Prioritet(Elem l);
+void UnaryPlus(Elem *m1,int ln);
+void Variable (Elem *m2,int ln);
+void UnaryMinus(Elem *m1,int ln);
+double OPN(Elem *m2,int ln);
+#endif
